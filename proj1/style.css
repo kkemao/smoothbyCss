@@ -1,0 +1,239 @@
+body {
+    font-size: 15px;
+    font-weight: 400;
+}
+/*设置根父级大小占满整个屏幕，定位后设置4个方向为0，可以自动撑满整个屏幕*/
+.nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.nav input,.nav a {
+    position:fixed;
+    bottom: 0;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.nav input {
+    z-index: 1000;
+    opacity: 0;
+}
+.nav a {
+    background-color: #795da3;
+    color: #fff;
+    z-index: 10;
+    text-align: center;
+}
+#st-control-1,#st-control-1 +a {
+     left: 0;
+ }
+#st-control-2,#st-control-2 +a {
+    left: 20%;
+}
+#st-control-3,#st-control-3 +a {
+    left: 40%;
+}
+#st-control-4,#st-control-4 +a {
+    left: 60%;
+}
+#st-control-5,#st-control-5 +a {
+    left: 80%;
+}
+.nav input:checked +a {
+    background-color: #c377a1;
+}
+/*制作三角形*/
+.nav input:checked +a:after {
+    content: '';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 20px solid transparent;
+    border-bottom-color: #c377a1;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -20px;
+}
+
+@font-face {
+    font-family: 'sel';
+    src: url("../fonts/fonts/raphaelicons-webfont.eot") format('eot');
+    src: url("../fonts/fonts/raphaelicons-webfont.svg") format('svg');
+    src: url("../fonts/fonts/raphaelicons-webfont.ttf") format('ttf');
+    src: url("../fonts/fonts/raphaelicons-webfont.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.st-scroll,.st-panel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.st-panel {
+    overflow: hidden;
+}
+.st-scroll {
+    transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    left: 0;
+    top: 0;
+    transition: transform 1s ease-in-out;
+    -webkit-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    -ms-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+}
+#st-control-1:checked ~.st-scroll{
+    transform: translateY(0%);
+    -o-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+}
+#st-control-2:checked ~.st-scroll{
+    transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+}
+#st-control-3:checked ~.st-scroll{
+    transform: translateY(-200%);
+    -o-transform: translateY(-200%);
+    -ms-transform: translateY(-200%);
+    -webkit-transform: translateY(-200%);
+    -moz-transform: translateY(-200%);
+}
+#st-control-4:checked ~.st-scroll{
+    transform: translateY(-300%);
+    -o-transform: translateY(-300%);
+    -ms-transform: translateY(-300%);
+    -webkit-transform: translateY(-300%);
+    -moz-transform: translateY(-300%);
+}
+#st-control-5:checked ~.st-scroll{
+    transform: translateY(-400%);
+    -o-transform: translateY(-400%);
+    -ms-transform: translateY(-400%);
+    -webkit-transform: translateY(-400%);
+    -moz-transform: translateY(-400%);
+}
+.st-scroll .des {
+    width: 250px;
+    height: 250px;
+    background-color: #795da3;
+    margin: 0 auto;
+    transform: rotate(45deg);
+    -webkit-transform:translateY(-50%) rotate(45deg);
+    -moz-transform: translateY(-50%) rotate(45deg);
+    -o-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+}
+[data-icon]:after {
+    content: attr(data-icon);
+    width: 250px;
+    height: 250px;
+    line-height: 350px;
+    font-family: 'sel';
+    font-size: 120px;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -110px 0 0 -110px;
+    text-shadow: 5px 5px 5px rgba(151,24,64,.2);
+}
+.st-scroll h2 {
+    font-size:60px;
+    height: 80px;
+    line-height: 80px;
+    font-weight: 900;
+    text-align: center;
+    color: #795da3;
+    text-shadow: 5px 5px 5px rgba(151,24,64,.2);
+}
+.st-scroll p {
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: 300;
+    color:#b9bbbe;
+    text-align: center;
+}
+.st-scroll .style .des {
+    background-color: #fff;
+}
+.style [data-icon]:after{
+    color: #a71d5d;
+}
+.st-scroll .style h2,.st-scroll .style p{
+    color: #fff;
+}
+.st-scroll .style {
+    background: #a71d5d;
+}
+.nav #st-control-1:checked ~ .st-scroll #panel-1 h2,
+.nav #st-control-2:checked ~ .st-scroll #panel-2 h2,
+.nav #st-control-3:checked ~ .st-scroll #panel-3 h2,
+.nav #st-control-4:checked ~ .st-scroll #panel-4 h2,
+.nav #st-control-5:checked ~ .st-scroll #panel-5 h2 {
+    animation: moveDown 1s ease-in-out 0.2s backwards;
+}
+@keyframes moveDown {
+    0%{
+        transform: translateY(-40px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+
+}
+.nav #st-control-1:checked ~ .st-scroll #panel-1 p,
+.nav #st-control-2:checked ~ .st-scroll #panel-2 p,
+.nav #st-control-3:checked ~ .st-scroll #panel-3 p,
+.nav #st-control-4:checked ~ .st-scroll #panel-4 p,
+.nav #st-control-5:checked ~ .st-scroll #panel-5 p{
+    animation: moveUp 1s ease-in-out 0.2s backwards;
+}
+@keyframes moveUp {
+    0%{
+        transform: translateY(40px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+@media screen and (max-width: 520px){
+    .st-scroll h2 {
+        font-size:42px ;
+    }
+    .st-scroll p {
+        font-size: 16px;
+    }
+    .nav a {
+        font-size: 18px;
+    }
+    [data-icon]:after {
+        font-size: 90px;
+        margin: -120px 0 0 -120px;
+    }
+    .st-scroll .des {
+        width: 180px;
+        height: 180px;
+    }
+
+}
